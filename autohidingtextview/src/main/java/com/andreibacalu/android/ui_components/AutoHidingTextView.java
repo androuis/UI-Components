@@ -26,7 +26,7 @@ public class AutoHidingTextView extends AppCompatTextView {
     @Override
     public void setText(CharSequence text, BufferType type) {
         super.setText(text, type);
-        if (TextUtils.isEmpty(text)) {
+        if (TextUtils.isEmpty(text) || TextUtils.getTrimmedLength(text) == 0) {
             setVisibility(GONE);
         } else {
             setVisibility(VISIBLE);
